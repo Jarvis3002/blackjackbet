@@ -131,15 +131,15 @@ class BlackjackSimulator:
         true_count = self.get_true_count()
         
         if true_count < 1:
-            return self.base_bet 
+            return self.base_bet * 0.5
         elif 1 <= true_count < 2:
             return self.base_bet * 2
         elif 2 <= true_count < 3:
-            return self.base_bet * 4
+            return self.base_bet * 3
         elif 3 <= true_count < 4:
-            return self.base_bet * 8
+            return self.base_bet * 4
         else:
-            return self.base_bet * 12
+            return self.base_bet * 5
     
     
     def simulate(self):
@@ -168,7 +168,7 @@ class BlackjackSimulator:
             print("No hands were played - deck was empty")
         return self.profit
 
-def run_simulations(num_simulations=1000):
+def run_simulations(num_simulations=10000):
     profits = []
     for i in range(num_simulations):
         sim = BlackjackSimulator()
@@ -181,4 +181,4 @@ def run_simulations(num_simulations=1000):
     return mean_profit
 
 if __name__ == "__main__":
-    run_simulations(1000)
+    run_simulations(10000)
