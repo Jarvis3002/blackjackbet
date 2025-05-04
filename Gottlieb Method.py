@@ -149,7 +149,7 @@ class BlackjackSimulator:
         
         return self.profit
 
-def run_simulations(num_simulations=1000):
+def run_simulations(num_simulations=10000):
     profits = []
     for i in range(num_simulations):
         sim = BlackjackSimulator()
@@ -162,4 +162,4 @@ def run_simulations(num_simulations=1000):
     return mean_profit
 
 if __name__ == "__main__":
-    run_simulations(1000)
+    run_simulations(10000)
